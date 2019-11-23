@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title></title>
+      <link rel="stylesheet" type="text/css" href="main.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+   </head>
+    <script type="text/javascript">
+      let cname='in';
+         function searchfunc(eve)
+         {
+            console.log(eve);
+            apisearch(eve);
+        
+         }
+         function searchfuncate(eve)
+         {
+            console.log(eve);
+            categoriessearch(eve);
+         }
+async  function categoriessearch(namecat)
+{
+var countryname;
+countryname=cname;
+console.log('https://newsapi.org/v2/top-headlines?country='+countryname+'&category='+namecat+'&apiKey=5078df9e54c54b4da1ba5d54a5c18dfe')
+console.log(countryname);
+const response = await fetch('https://newsapi.org/v2/top-headlines?country='+countryname+'&category='+namecat+'&apiKey=5078df9e54c54b4da1ba5d54a5c18dfe');
+const myJson = await response.json();
+
+var apidata=myJson
+var data='';
+console.log(myJson);
+for(var i=0;i<10;i++)
+{
+  data=data+'<div class="card mb-4"><div class="row"><div class="col-md-4"> <img class="card-img" src='+apidata.articles[i].urlToImage+' /> </div> <div class="col-md-8"> <div class="card-body"> <h5 class="card-title">'+apidata.articles[i].title+'</h5> <p class="card-text">'+apidata.articles[i].description+' </p> <p class="card-text"> <small class="text-muted"><a href="'+apidata.articles[i].urlToImage+'">Read</a></small></p> </div> </div> </div>';
+}
+document.getElementById('newsheadline').innerHTML="<center><h1>LATEST NEWS</h1></center><br>"+data;
+}
+
+
+      </script>
+   <body>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" style="font-weight: bolder;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> One Step Ahead</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="news.html">Current-News</a>
+      </li>
+      <li class="nav-item">
+         <a class="nav-link" href="weather.html">Weather-Forecast</a>
+       </li>
+    </ul>
+  </div>
+</nav>
+ 
+
+     <div>
+      <div id="flip">
+            Search Here!!!
+     </div>
+     
+      <div style="overflow-y:auto;height: 50vh;" id="panel">
+       
+      <table class="w3-table-all notranslate"  id="myTable">
+         <tr class="header">
+            
+            <th style="width:40%;">Country Name</th>
+         </tr>
+         <tr onclick="goingBottom('in')">
+            <td>India</td>
+         </tr>
+         <tr onclick="goingBottom('ca')">
+            <td>Canada</td>
+         </tr>
+         <tr onclick="goingBottom('hk')">
+            <td>Hong Kong</td>
+         </tr>
+         <tr onclick="goingBottom('sg')">
+            <td>Singapore</td>
+         </tr>
+         <tr onclick="goingBottom('th')">
+            <td>Thailand</td>
+         </tr>
+         <tr onclick="goingBottom('nz')">
+            <td>New Zealand</td>
+         </tr>
+      </table>
+      <div>
+     </div>
+   </div>
+<div class="row"> 
+      <div class="col-lg-6 col-sm-6" style="box-shadow: rgba(78, 75, 75, 0.83) 3px 2px 6px 2px;">
+         <iframe src="https://www.youtube.com/embed/Ky-OAhQ-szk" frameborder="0" height="315" width="100%" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+         </iframe>
+      </div>
+      <div class="col-lg-6 col-sm-6" style="box-shadow: rgba(78, 75, 75, 0.83) 3px 2px 6px 2px;">
+         <iframe height="315" width="100%" src="https://www.youtube-nocookie.com/embed/fX4SA0n3U9M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+      </iframe>
+   </div>
+  
+</div>
+    
+<div class="row">
+      <input class="col-lg-2 col-sm-3" type="button" onclick="searchfuncate('business')" name="" value="Business">
+      <input class="col-lg-2 col-sm-3" type="button" onclick="searchfuncate('entertainment')" name="" value="Entertainment">
+      <input class="col-lg-2 col-sm-3" type="button" onclick="searchfuncate('health')" name="" value="Health">
+      <input class="col-lg-2 col-sm-3" type="button" onclick="searchfuncate('science')" name="" value="Science">
+      <input class="col-lg-2 col-sm-6" type="button" onclick="searchfuncate('sports')" name="" value="Sports">
+      <input class="col-lg-2 col-sm-6" type="button" onclick="searchfuncate('technology')" name="" value="Technology">
+   </div>
+     <div>
+          <div id="newsheadline" className="row container">
+             <script>
+                  searchfuncate('business');
+               </script>
+          </div>
+     </div>
+
+      <script type="text/javascript" src="script.js"></script>
+	  <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <p>&copy; SHIVAM &nbsp; &nbsp; <i class="fa fa-download"></i>  <a href="https://shivam007cu.github.io/" style="color: #ffffff;">My Resume</a></p>
+                </div>
+            </div>
+        </div>
+   </body>
+   <script>
+   function goingBottom(eve) {
+  document.body.scrollTop = 600;
+  document.documentElement.scrollTop = 600;
+  searchfunc(eve);
+}
+   </script>
+</html>

@@ -1,0 +1,70 @@
+body
+{
+    font-family: 'Tangerine', serif;
+    background-color: #ffffff;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.jumbo
+{
+    font-size: 40px;
+    background-color: black;
+    color: #ffffff;
+    margin-bottom: 0px;
+}
+
+#city-div
+{
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+input[type="text"]
+{
+    height: 40px;
+    font-size: 18px;
+}
+
+#submit-news
+{
+    height: 40px;
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 5px;
+}
+
+#error-msg
+{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+#country
+{
+    margin-top: 15px;
+}
+
+#submit-news
+{
+    height: 40px;
+    letter-spacing: 0.5px;
+    margin-top: 14px;
+    box-shadow: 2px 2px 5px black;
+    border: none;
+    border-radius: 5px;
+}
+
+th
+{
+    text-align: center;
+}
+
+td
+{
+    text-align: center;
+}

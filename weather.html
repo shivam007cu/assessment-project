@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Current Weather</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="weather.css">
+    </head>
+    <body style="background-image: url('https://s2.mzstatic.com/us/r1000/063/Purple/v4/a7/f7/96/a7f796b2-0895-3c65-8683-82d73a1889eb/mza_864317397316930206.png');">
+
+
+        <!-- DISPLAY INFORMATION -->
+        <div class="jumbotron text-center jumbo">
+            <h2 style="margin-top: 70px;"><b>Current Weather Information</b></h2>
+        </div>
+
+        <div class="container" style="height: 400px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center" id="title-searchcity">Search City</h3>
+                    <div id="error" class="text-center"></div>
+                </div>
+                <div class="row-form-group form-inline" id="city-div" style="margin-bottom: 40px;">
+                    <input type="text" name="city" id="city" placeholder="Enter city name" class="form-control">
+                    <button class="btn" id="submit-city">Search</button>
+                </div>
+            </div>
+
+            <div id="output-weather"></div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="weather.js"></script>
+    </body>
+</html>

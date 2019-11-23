@@ -23,4 +23,4 @@
 
 ## Links For Live Websites
 * myResume            https://shivam007cu.github.io/
-* assessment-project  
+* assessment-project  https://shivam007cu.github.io/assessment-project/
